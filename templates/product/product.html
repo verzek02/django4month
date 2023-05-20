@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Man_shop</title>
+</head>
+<body>
+<center>
+      <h1>Все товары</h1>
+  {% for i in product %}
+  <h3>{{i.product_name}}</h3>
+  <img src="{{i.image.url}}" alt="" width="500" height="500">
+  <h3>Размер: {{i.size}}</h3>
+  <button><a href="/product_detail/{{i.id}}">Узнать подробнее</a></button>
+    <hr>
+    <hr>
+  
+  {% endfor %}
+</center>
+</body>
+</html>
