@@ -1,19 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product Detail</title>
-</head>
-<body>
-<center>
-  <img src="{{product_id.image.url}}" alt="" width="400" height="500">
-  <h1>{{product_id.product_name}}</h1>
-  <h3>Цвет товара: {{product_id.color}}</h3>
-  <p>Размер товара: {{product_id.size}}</p>
-  <p>Состояние товара: {{product_id.shape}}</p>
-  <h4>Где сделан товар: {{product_id.made_in}}</h4>
-  <h4>Состав товара: {{product_id.compound}}</h4>
-  <h2>Цена товара: {{product_id.price}}</h2>
-</center>
-</body>
-</html>
+{% include 'product/header.html' %}
+
+<div class="container">
+    <div class="post">
+        <div class="post-image">
+            <img src="{{product_id.image.url}}" alt="">
+        </div>
+        <div class="post-content">
+
+
+            <h4>Цвет товара: {{product_id.color}}</h4>
+            <h4>Размер товара: {{product_id.size}}</h4>
+            <h4>Состояние товара: {{product_id.shape}}</h4>
+            <h4>Где сделан товар: {{product_id.made_in}}</h4>
+            <h4>Состав товара: {{product_id.compound}}</h4>
+            <h2>Цена товара: {{product_id.price}}</h2>
+            <h1>{{i.description}}</h1>
+            <p>{{ i.created_at}}</p>
+            <style>
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            </style>
+            <button type="button" class="btn btn-secondary"><a href="/product_detail/{{product_id.id}}/delete/">Удалить
+                товар</a></button>
+            <button type="button" class="btn btn-secondary"><a href="/product_detail/{{product_id.id}}/update/">Редактировать
+                товар</a></button>
+        </div>
+        <div class="post-header">
+            <h1>{{product_id.product_name}}</h1>
+        </div>
+    </div>
+</div>
+
+
+{% include 'product/footer.html' %}

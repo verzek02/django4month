@@ -38,3 +38,5 @@ class Man_shop(models.Model):
 
 
 
+
+

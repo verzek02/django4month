@@ -1,21 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Man_shop</title>
-</head>
-<body>
+{% include 'product/header.html' %}
 <center>
-      <h1>Все товары</h1>
-  {% for i in product %}
-  <h3>{{i.product_name}}</h3>
-  <img src="{{i.image.url}}" alt="" width="500" height="500">
-  <h3>Размер: {{i.size}}</h3>
-  <button><a href="/product_detail/{{i.id}}">Узнать подробнее</a></button>
-    <hr>
-    <hr>
-  
-  {% endfor %}
+    <h1>Все товары</h1>
+    <style>
+        h1 {
+            color: white;
+        }
+    </style>
 </center>
-</body>
-</html>
+{% for i in product %}
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+<div class="container">
+    <div class="post">
+        <style>
+            .post {
+                background-color: black;
+            }
+        </style>
+        <div class="post-header">
+            <center>
+                <div class="post-image">
+
+                    <style>
+                        .post-image {
+                            background-color: black;
+                        }
+                    </style>
+                    <img src="{{i.image.url}}" alt="" height="600">
+
+                </div>
+            </center>
+
+            <style>
+                h3 {
+                    color: silver;
+                }
+
+                h4 {
+                    color: silver;
+                }
+            </style>
+            <h3>{{i.product_name}}</h3>
+            <h4>Размер: {{i.size}}</h4>
+        </div>
+        <div class="post-content">
+            <center>
+                <style>
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+
+                    body {
+                        background-color: black;
+                    }
+                </style>
+                <button type="button" class="btn btn-secondary"><a href="/product_detail/{{i.id}}">Узнать цену</a>
+                </button>
+                <button type="button" class="btn btn-secondary"><a href="/add-product/">Добавить товар</a></button>
+            </center>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% include 'product/footer.html' %}
+
+
