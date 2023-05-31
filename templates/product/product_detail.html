@@ -3,17 +3,17 @@
 <div class="container">
     <div class="post">
         <div class="post-image">
-            <img src="{{product_id.image.url}}" alt="">
+            <img src="{{object.image.url}}" alt="">
         </div>
         <div class="post-content">
 
 
-            <h4>Цвет товара: {{product_id.color}}</h4>
-            <h4>Размер товара: {{product_id.size}}</h4>
-            <h4>Состояние товара: {{product_id.shape}}</h4>
-            <h4>Где сделан товар: {{product_id.made_in}}</h4>
-            <h4>Состав товара: {{product_id.compound}}</h4>
-            <h2>Цена товара: {{product_id.price}}</h2>
+            <h4>Цвет товара: {{object.color}}</h4>
+            <h4>Размер товара: {{object.size}}</h4>
+            <h4>Состояние товара: {{object.shape}}</h4>
+            <h4>Где сделан товар: {{object.made_in}}</h4>
+            <h4>Состав товара: {{object.compound}}</h4>
+            <h2>Цена товара: {{object.price}}</h2>
             <h1>{{i.description}}</h1>
             <p>{{ i.created_at}}</p>
             <style>
@@ -22,13 +22,13 @@
                     color: white;
                 }
             </style>
-            <button type="button" class="btn btn-secondary"><a href="/product_detail/{{product_id.id}}/delete/">Удалить
+            <button type="button" class="btn btn-secondary"><a href="/product_detail/{{object.id}}/delete/">Удалить
                 товар</a></button>
-            <button type="button" class="btn btn-secondary"><a href="/product_detail/{{product_id.id}}/update/">Редактировать
+            <button type="button" class="btn btn-secondary"><a href="/product_detail/{{object.id}}/update/">Редактировать
                 товар</a></button>
         </div>
         <div class="post-header">
-            <h1>{{product_id.product_name}}</h1>
+            <h1>{{object.product_name}}</h1>
         </div>
     </div>
 </div>
